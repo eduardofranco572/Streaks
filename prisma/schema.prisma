@@ -13,3 +13,10 @@ model User {
   email     String   @unique
   password  String
 }
+
+model Contact {
+  id         Int      @id @default(autoincrement())
+  email      String
+  externalId String
+  createdAt  DateTime @default(now())
+}

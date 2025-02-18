@@ -39,7 +39,7 @@ export default function Login() {
       redirect: false,
       email: formData.email,
       password: formData.password,
-      callbackUrl: "/dashboard",
+      callbackUrl: "/perfil",
     });
 
     if (response?.error) {
@@ -53,13 +53,13 @@ export default function Login() {
         icon: "success",
         title: "Login realizado!",
         text: "Redirecionando...",
-        timer: 2000,
+        timer: 1000,
         showConfirmButton: false,
       });
 
       setTimeout(() => {
-        router.push("/dashboard");
-      }, 2000);
+        router.push("/perfil");
+      }, 1000);
     }
   };
 
