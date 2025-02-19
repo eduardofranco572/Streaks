@@ -8,15 +8,21 @@ generator client {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
+  id             Int       @id @default(autoincrement())
+  email          String    @unique
+  createdAt      DateTime  @default(now())
+  externalId     String    @unique
+  streaks        Int       @default(0)
+  totalReading   Int       @default(0)
+  personalRecord Int       @default(0)
+  level          Int       @default(1)
+  experience     Int       @default(0)
+  histories      History[]
 }
 
-model Contact {
-  id         Int      @id @default(autoincrement())
-  email      String
-  externalId String
-  createdAt  DateTime @default(now())
+model History {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
 }

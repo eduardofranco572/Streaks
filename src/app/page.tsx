@@ -17,21 +17,41 @@ export default async function Home({ searchParams }: HomePageProps) {
   const idParam = params.id;
 
   const email = Array.isArray(emailParam) ? emailParam[0] : emailParam;
-  const id = Array.isArray(idParam) ? idParam[0] : idParam;
+  const externalId = Array.isArray(idParam) ? idParam[0] : idParam;
 
-  if (email && id) {
+  if (email && externalId) {
     try {
-      await prisma.contact.create({
+      let user = await prisma.user.findUnique({
+        where: { email },
+      });
+
+      if (user) {
+        user = await prisma.user.update({
+          where: { email },
+          data: { streaks: { increment: 1 } },
+        });
+      } else {
+        user = await prisma.user.create({
+          data: {
+            email,
+            externalId,
+            streaks: 1,
+          },
+        });
+      }
+
+      await prisma.history.create({
         data: {
-          email,
-          externalId: id,
+          userId: user.id,
         },
       });
-      console.log("Contato salvo com sucesso!");
-    } catch (error) {
-      console.error("Erro ao salvar contato:", error);
-    }
-  }
 
-  return redirect("/login");
+      console.log("Streak atualizado e histórico registrado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao processar o streak do usuário:", error);
+    }
+    return redirect(`/login?email=${email}&id=${externalId}`);
+  } else {
+    return redirect('/login');
+  }
 }

@@ -78,3 +78,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.w-8 {
+  width: 3.65rem !important;
+}
+.h-8 {
+  height: 2.8rem !important;
+}
