@@ -67,7 +67,7 @@ export default function EngagedUsers() {
           </Select>
         </div>
       </div>
-      <div className="flex flex-col w-full mt-6">
+      <div className="flex flex-col w-full mt-6 max-h-[400px] overflow-y-auto overflow-x-hidden">
         {loading ? (
           <>
             {[1, 2, 3].map((i) => (

@@ -19,7 +19,7 @@ const chartConfig = {
   },
   engajamento: {
     label: "Engajamento",
-    color: "#615A5A",
+    color: "#FF9049",
   },
 } satisfies ChartConfig;
 

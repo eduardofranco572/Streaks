@@ -5,6 +5,12 @@ import { CiMedal } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { Progress } from "@/components/ui/progress"
 import { CalendarPersonalized } from "@/components/CalendarPersonalized";
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card"
+  
 
 const prisma = new PrismaClient();
 
@@ -37,7 +43,7 @@ export default async function Perfil(props: Props) {
                         Acompanhe seu progresso
                     </h1>
                     <div className="flex flex-col items-center mt-16 w-full">
-                        <div className="flex items-center justify-center flex-col border-4 border-[#FFCE04] rounded-full w-28 h-28 select-none">
+                        <div className="flex items-center justify-center flex-col border-4 border-[#FFCE04] rounded-full w-28 h-28 select-none shadow-yellow-custom">
                             <h1 className="text-5xl font-bold">
                                 {user.streaks}
                             </h1>
@@ -63,19 +69,24 @@ export default async function Perfil(props: Props) {
                                 <p className="text-base>1">{user.level}</p>
                             </div>
                         </div>
-
-                        <div className="flex flex-col items-center mt-16 w-full">
-                            <h1>teste para o level</h1>
-                            <div className="flex items-center flex-col justify-center w-full">
-                                <div className="flex items-center justify-center w-full">
-                                    <p>{user.level}</p>
-                                    <Progress className="w-[50%] mx-2.5" value={50} />
-                                    <p>{user.level + 1}</p>
-                                </div>
-                                <div className="flex items-center justify-evenly w-full mt-2">
-                                    <p className="text-sm">0</p>
-                                    <p className="text-sm">{user.experience} XP</p>
-                                    <p className="text-sm">100</p>
+                        
+                        <div className="flex flex-col items-center mt-16 w-[70%] border border-[#27272A] rounded-2xl p-4">
+                            <h1>Detalhes do seu level</h1>
+                            <div className="flex flex-col items-center w-full mt-4">
+                                <div className="flex flex-col items-center justify-center w-full">
+                                    <div className="flex items-center justify-center w-full">
+                                        <p>{user.level}</p>
+                                        <Progress
+                                            className="w-[80%] mx-2.5"
+                                            value={(user.experience / 500) * 100}
+                                        />
+                                        <p>{user.level + 1}</p>
+                                    </div>
+                                    <div className="flex items-center justify-between w-[80%] mt-2">
+                                        <p className="text-sm">0</p>
+                                        <p className="text-sm">{user.experience} XP</p>
+                                        <p className="text-sm">500</p>
+                                    </div>    
                                 </div>
                             </div>    
                         </div>
@@ -96,18 +107,3 @@ export default async function Perfil(props: Props) {
       </div>
     );
 }
-
-// {user.email}
-// {user.id}
-// {user.externalId}
-// {user.totalReading}
-// {user.personalRecord}
-// {user.level}
-// {user.experience}
-
-//text-[#FFCE04]
-
-
-// const data = new Date("2025-02-16T00:00:00Z");
-// const timestamp = data.getTime();
-// console.log(timestamp);
