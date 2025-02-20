@@ -4,13 +4,7 @@ import { PiBookOpenThin } from "react-icons/pi";
 import { CiMedal } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { Progress } from "@/components/ui/progress"
-import { CalendarPersonalized } from "@/components/CalendarPersonalized";
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card"
-  
+import { CalendarPersonalized } from "@/components/calendarPersonalized";
 
 const prisma = new PrismaClient();
 
@@ -39,7 +33,7 @@ export default async function Perfil(props: Props) {
         {user ? (
             <div className="flex justify-center max-w-2xl mx-auto px-3 h-screen">
                 <div className="flex flex-col items-center mt-5 w-full">
-                    <h1 className="text-3xl font-bold mb-4">
+                    <h1 className="text-3xl font-bold mb-4 text-center">
                         Acompanhe seu progresso
                     </h1>
                     <div className="flex flex-col items-center mt-16 w-full">
@@ -70,8 +64,8 @@ export default async function Perfil(props: Props) {
                             </div>
                         </div>
                         
-                        <div className="flex flex-col items-center mt-16 w-[70%] border border-[#27272A] rounded-2xl p-4">
-                            <h1>Detalhes do seu level</h1>
+                        <div className="flex flex-col items-center mt-16 w-[70%] border border-[#27272A] rounded-2xl p-4 select-none">
+                            <h1>Detalhes do seu nível</h1>
                             <div className="flex flex-col items-center w-full mt-4">
                                 <div className="flex flex-col items-center justify-center w-full">
                                     <div className="flex items-center justify-center w-full">

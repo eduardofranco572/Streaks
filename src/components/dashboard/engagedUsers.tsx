@@ -40,7 +40,7 @@ export default function EngagedUsers() {
   }, [selected]);
 
   return (
-    <div className="flex flex-col items-start border border-[#27272A] rounded-2xl p-4 w-full">
+    <div className="flex flex-col items-start border border-[#27272A] rounded-2xl p-4 w-full h-full">
       <div className="flex items-center justify-between w-full">
         <div className="w-full">
           <h1 className="text-base font-semibold">Leitores mais engajados</h1>
@@ -67,7 +67,7 @@ export default function EngagedUsers() {
           </Select>
         </div>
       </div>
-      <div className="flex flex-col w-full mt-6 max-h-[400px] overflow-y-auto overflow-x-hidden">
+      <div className="flex flex-col w-full mt-6 overflow-y-auto overflow-x-hidden">
         {loading ? (
           <>
             {[1, 2, 3].map((i) => (

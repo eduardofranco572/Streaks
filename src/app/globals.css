@@ -85,3 +85,14 @@
 .h-8 {
   height: 2.8rem !important;
 }
+
+@media (max-width: 786px){
+  .h-8 {
+    height: 1.8rem !important;
+  }
+  
+  .w-8 {
+    width: 2.65rem !important;
+  }
+}
+
