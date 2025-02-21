@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, User } from "@prisma/client";
 
 class UserService {
   private prisma: PrismaClient;
@@ -28,7 +28,9 @@ class UserService {
     return { newExperience, newLevel };
   }
 
-  private async updateXpAndLevel(user: any): Promise<any> {
+  private async updateXpAndLevel(
+    user: Pick<User, "id" | "experience" | "level" | "streaks">
+  ): Promise<User> {
     const { newExperience, newLevel } = this.calculateLevelAndExperience(
       user.experience,
       user.level,
@@ -39,7 +41,7 @@ class UserService {
       data: { experience: newExperience, level: newLevel },
     });
   }
-
+  
   private getDayRange(date: Date): { startOfDay: Date; endOfDay: Date } {
     const startOfDay = new Date(
       Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
@@ -132,16 +134,24 @@ class UserService {
       }
 
     } else if (diffDays > 2) {
-      const updateData: any = { streaks: 1, totalReading: { increment: 1 } };
+      const updateData: { 
+        streaks: number; 
+        totalReading: { increment: number }; 
+        personalRecord?: number;
+      } = { 
+        streaks: 1, 
+        totalReading: { increment: 1 } 
+      };
+    
       if (user.streaks > user.personalRecord) {
         updateData.personalRecord = user.streaks;
       }
-
+    
       user = await this.prisma.user.update({
         where: { id: user.id },
         data: updateData,
       });
-
+    
       user = await this.updateXpAndLevel(user);
     } else if (diffDays === 0) {
       console.log("Mesmo dia, mas nenhum registro encontrado na busca por range. Isso não deveria ocorrer.");

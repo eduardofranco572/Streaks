@@ -34,7 +34,7 @@ class DashboardService {
 const prisma = new PrismaClient();
 const dashboardService = new DashboardService(prisma);
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const userCounts = await dashboardService.getUserCounts();
     return NextResponse.json(userCounts);

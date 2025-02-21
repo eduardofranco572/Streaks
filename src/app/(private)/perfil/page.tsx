@@ -24,9 +24,9 @@ class UserService {
 const userService = new UserService();
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     id?: string;
-  };
+  }>;
 };
 
 export default async function Perfil(props: Props) {

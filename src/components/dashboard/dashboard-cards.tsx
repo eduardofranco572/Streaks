@@ -9,7 +9,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function DashboardCards() {
   const { data, loading, error } = useDashboardData();
 
-  // Cálculo de variação de cadastros
   const percentChange =
     data?.users.lastMonthCount > 0
       ? (
@@ -20,7 +19,7 @@ export default function DashboardCards() {
       : "0";
 
   return (
-    <div className="flex flex-col gap-4 mb-4 md:flex-row md:gap-4">
+    <div className="flex gap-4 flex-row md:gap-4">
       {loading ? (
         <>
           {[1, 2].map((i) => (

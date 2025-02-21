@@ -7,13 +7,13 @@ import { EngagementByYearChart } from "@/components/dashboard/engagement-by-year
 export default async function Dashboard() {
   return (
     <main>
-      <h1 className="text-3xl font-bold text-center mb-4">
+      <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">
         Dashboard Administrativo
       </h1>
-      <div className="flex items-center justify-center flex-col w-full py-2 px-20 space-y-4">
+      <div className="flex items-center justify-center flex-col w-full py-2 px-8 md:px-16 space-y-4">
         <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] w-full">
           <EngagementChart />
-          <div className="flex flex-col justify-center gap-4 ml-2">
+          <div className="flex flex-col justify-center gap-4 mt-4 md:ml-2 md:mt-0">
             <DashboardCards />
             <EngagementByYearChart />
           </div>

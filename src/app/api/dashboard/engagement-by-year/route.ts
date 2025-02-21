@@ -36,9 +36,7 @@ const engagementService = new EngagementService(prisma);
 
 export async function GET() {
   try {
-    console.log("Recebida requisição para buscar engajamento por ano");
     const data = await engagementService.getEngagementByYear();
-    console.log("Dados retornados:", data);
     return NextResponse.json(data);
   } catch (error) {
     console.error("Erro ao buscar engajamento por ano:", error);

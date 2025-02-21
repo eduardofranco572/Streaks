@@ -73,7 +73,7 @@ export function CadastroBarChart() {
           </Select>
         </div>
       </CardHeader>
-      <CardContent className="h-full">
+      <CardContent >
         <ChartContainer config={chartConfig} className="w-full h-full max-h-[70%]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart

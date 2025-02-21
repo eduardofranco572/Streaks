@@ -19,10 +19,14 @@ export function useEngagementByYear() {
         if (!response.ok) {
           throw new Error("Erro ao buscar engajamento por ano");
         }
-        const result = await response.json();
+        const result: EngagementData[] = await response.json();
         setData(result);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Erro desconhecido");
+        }
       } finally {
         setLoading(false);
       }

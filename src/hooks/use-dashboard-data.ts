@@ -39,8 +39,8 @@ export function useDashboardData() {
           users: usersData,
           totalReading: readingData.totalReading,
         });
-      } catch (err: any) {
-        setError(err);
+      } catch (err) {
+        setError(err instanceof Error ? err : new Error("Erro desconhecido"));
       } finally {
         setLoading(false);
       }

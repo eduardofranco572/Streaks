@@ -47,7 +47,6 @@ export function EngagementChart() {
       </div>
       <ChartContainer
         config={chartConfig}
-        className="w-full h-full md:max-h-[50vh]"
       >
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />

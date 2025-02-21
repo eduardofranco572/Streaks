@@ -11,12 +11,10 @@ type LevelDetailsProps = {
 
 export const UserInformation = ({
     userLevel,
-    userExperience,
     userTotalReading,
     userPersonalRecord
 }: LevelDetailsProps) => {
-    const progress = (userExperience / 500) * 100;
-
+  
     return (
         <div className="flex items-center justify-between mt-16 w-full select-none">
             <div className="relative flex flex-col items-center flex-1">

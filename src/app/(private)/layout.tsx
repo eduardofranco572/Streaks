@@ -14,10 +14,8 @@ export default function PrivateLayout({ children }: { children: React.ReactNode 
             disableTransitionOnChange
           >
             <Header />
-
             {children}
           </ThemeProvider>
-          
         </body>
       </html>
     </>

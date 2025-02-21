@@ -2,15 +2,15 @@ import { redirect } from "next/navigation";
 import { updateUserStreakAndXp } from "@/services/user-streak";
 
 interface HomePageProps {
-  searchParams: {
+  searchParams: Promise<{
     email?: string | string[];
     id?: string | string[];
     [key: string]: string | string[] | undefined;
-  };
+  }>;
 }
 
 export default async function Home({ searchParams }: HomePageProps) {
-  const params = await Promise.resolve(searchParams);
+  const params = await searchParams; 
   const emailParam = params.email;
   const idParam = params.id;
 
