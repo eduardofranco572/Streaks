@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useChartsData } from "@/hooks/useChartsData";
+import { useChartsData } from "@/hooks/use-charts-data";
 import { availableYears } from "@/utils/years";
 
 import {

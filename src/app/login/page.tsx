@@ -21,7 +21,7 @@ export default function Login() {
     localStorage.setItem('externalId', externalId);
 
     const redirectUrl =
-      email === 'contato@thenewscc.com.br' && externalId === '001'
+      email === 'adm@gmail.com' && externalId === '1'
         ? `/dashboard/?id=${externalId}`
         : `/perfil/?id=${externalId}`;
 

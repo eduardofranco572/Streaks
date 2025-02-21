@@ -1,17 +1,7 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "Streaks",
-};
-
-interface RootLayoutProps{
-  children: ReactNode 
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function PrivateLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -19,10 +9,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
+            <Header />
+
             {children}
           </ThemeProvider>
           

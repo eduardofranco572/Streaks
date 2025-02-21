@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { updateUserStreakAndXp } from "@/services/userStreak";
+import { updateUserStreakAndXp } from "@/services/user-streak";
 
 interface HomePageProps {
   searchParams: {
@@ -18,12 +18,8 @@ export default async function Home({ searchParams }: HomePageProps) {
   const externalId = Array.isArray(idParam) ? idParam[0] : idParam;
 
   if (email && externalId) {
-    try {
-      await updateUserStreakAndXp(email, externalId);
-      return redirect(`/login?email=${email}&id=${externalId}`);
-    } catch (error) {
-      console.error("Erro ao processar o streak do usuário:", error);
-    }
+    await updateUserStreakAndXp(email, externalId);
+    return redirect(`/login?email=${email}&id=${externalId}`);
   }
 
   return redirect("/login");

@@ -7,7 +7,7 @@ export function useChartsData(year: string) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`/api/chartsData?year=${year}`);
+        const response = await fetch(`/api/charts-data?year=${year}`);
         if (!response.ok) {
           throw new Error("Erro ao buscar dados");
         }

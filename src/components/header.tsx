@@ -1,11 +1,6 @@
 import { ModeToggleTheme } from "@/components/mode-toggle-theme";
 
-type HeaderProps = {
-  title: string;
-  backTo?: string;
-};
-
-export const Header = ({ title, backTo }: HeaderProps) => {
+export const Header = () => {
   return (
     <header className="flex flex-col items-center justify-between relative w-full">
       <div className="bg-custom-gradient w-full min-h-8 flex items-center">
@@ -16,17 +11,3 @@ export const Header = ({ title, backTo }: HeaderProps) => {
     </header>
   );
 };
-
-{
-  /*  import Link from "next/link";
-      import { Button } from "@/components/ui/button";
-      import Icon from "@/components/ui/icon";
-      {backTo && (
-        <Button size="icon" className="[&_svg]:size-6 " asChild>
-          <Link href={backTo}>
-            <Icon color="white" name="ArrowLeft" size={32} />
-          </Link>
-        </Button>
-      )} 
-  */
-}

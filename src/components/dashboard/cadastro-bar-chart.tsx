@@ -2,7 +2,7 @@
 
 import React, {useState } from "react"
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis, ResponsiveContainer } from "recharts"
-import { useChartsData } from "@/hooks/useChartsData";
+import { useChartsData } from "@/hooks/use-charts-data";
 import { availableYears } from "@/utils/years"
 
 import {
@@ -45,12 +45,12 @@ export function CadastroBarChart() {
 
   return (
     <Card className="w-full h-full border border-[#27272A]">
-      <CardHeader className="flex justify-between items-center flex-row">
+      <CardHeader className="flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col">
-          <CardTitle>Engajamento dos Cadastros</CardTitle>
+          <CardTitle className="text-center">Engajamento dos Cadastros</CardTitle>
           <CardDescription className="mt-2">Exibindo dados do semestre</CardDescription>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center flex-col md:flex-row gap-2">
           <Select onValueChange={(value) => setSelectedSemester(value)} value={selectedSemester}>
             <SelectTrigger className="w-[10rem]">
               <SelectValue placeholder="Filtrar" />
