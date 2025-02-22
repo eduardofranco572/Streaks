@@ -105,12 +105,13 @@ Essa estratégia assegura que os dados, como informações do usuário e histór
 </div>
 
 ### Escalabilidade
-A estrutura do banco de dados foi planejada para suportar o crescimento do volume de dados e o aumento das interações dos usuários. O uso do Prisma facilita a implementação de otimizações, como indexação, garantindo que as operações de inserção e consulta mantenham sua performance mesmo em cenários de alta demanda. Dessa forma, o sistema está preparado para evoluir de forma consistente e eficiente.
+A estrutura do banco de dados foi planejada para suportar o crescimento do volume de dados e o aumento das interações dos usuários. O uso do `Prisma` facilita a implementação de otimizações, como indexação, garantindo que as operações de inserção e consulta mantenham sua performance mesmo em cenários de alta demanda. Dessa forma, o sistema está preparado para evoluir de forma consistente e eficiente.
 
 ## Testes Realizados
 
 <div align="justify">
-  Para validar foi implementada uma suíte de testes unitários utilizando Jest para validar a lógica principal do gerenciamento de streaks e XP. Esses testes garantem que a função responsável por atualizar os dados do usuário execute corretamente operações como a criação de um novo usuário, a atualização condicional de streaks e XP com base na diferença de dias, e o registro adequado do histórico, tudo sem duplicidade. O resultado dos testes confirma que todos os cenários críticos foram cobertos e que a lógica se comporta conforme o esperado.
+  
+  Para validar foi implementada uma suíte de testes unitários utilizando `Jest` para validar a lógica principal do gerenciamento de `streaks` e `XP`. Esses testes garantem que a função responsável por atualizar os dados do usuário execute corretamente operações como a criação de um novo usuário, a atualização condicional de `streaks` e `XP` com base na diferença de dias, e o registro adequado do histórico, tudo sem duplicidade. O resultado dos testes confirma que todos os cenários críticos foram cobertos e que a lógica se comporta conforme o esperado.
 </div>
 
 ## Relatório de Análise e Sugestões de Melhorias
@@ -118,13 +119,15 @@ A estrutura do banco de dados foi planejada para suportar o crescimento do volum
 ### Decisões Técnicas
 
 <div align="justify">
-  Escolhi o Next.js por sua excelência como framework para aplicações React, oferecendo uma ampla variedade de bibliotecas e demonstrando agilidade e facilidade de uso em diversos contextos. Para garantir uma melhor organização e segurança no acesso ao banco de dados SQLite, foi adotado o Prisma. Além disso, utilizei o Tailwind CSS para acelerar o desenvolvimento da interface visual, considerando o prazo restrito do projeto. Por fim, o TypeScript foi incorporado, proporcionando tipagem estática que eleva a precisão do código e auxilia na detecção de erros em tempo de execução.
+  
+  Escolhi o `Next.js` por sua excelência como `framework` para aplicações `React`, oferecendo uma ampla variedade de bibliotecas e demonstrando agilidade e facilidade de uso em diversos contextos. Para garantir uma melhor organização e segurança no acesso ao banco de dados `SQLite`, foi adotado o `Prisma`. Além disso, utilizei o `Tailwind CSS` para acelerar o desenvolvimento da interface visual, considerando o prazo restrito do projeto. Por fim, o `TypeScript` foi incorporado, proporcionando tipagem estática que eleva a precisão do código e auxilia na detecção de erros em tempo de execução.
 </div>
 
 ### Sugestões de Melhorias
 
 <div align="justify">
-  Com um prazo de desenvolvimento ampliado, aprimoraríamos a interface do dashboard com a implementação de novas funcionalidades e a incorporação de elementos visuais que incentivem os usuários a aumentar seus streaks. Adicionalmente, planeja-se reforçar o sistema de auto login, por meio da implementação de uma lógica mais robusta e segura, poder fazer um sistema completo com cadastro e login para o usuário poder acessar a qualquer momento e poder integrar mais funcionalidades também.
+  
+  Com um prazo de desenvolvimento ampliado, aprimoraríamos a interface do `dashboard` com a implementação de novas funcionalidades e a incorporação de elementos visuais que incentivem os usuários a aumentar seus `streaks`. Adicionalmente, planeja-se reforçar o sistema de auto login, por meio da implementação de uma lógica mais robusta e segura, poder fazer um sistema completo com cadastro e login para o usuário poder acessar a qualquer momento e poder integrar mais funcionalidades também.
 </div>
 
 <br>
@@ -184,5 +187,4 @@ A estrutura do banco de dados foi planejada para suportar o crescimento do volum
     <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
   </a>  
 
-  
 </div>
