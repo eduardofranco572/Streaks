@@ -74,6 +74,14 @@ class UserService {
       },
     });
     
+    const existingUserByEmail = await this.prisma.user.findFirst({
+      where: { email }
+    });  
+
+    if (existingUserByEmail && existingUserByEmail.externalId !== externalId) {
+      throw new Error("404: Error! porfavor reabra o link no e-mail");
+    }
+
     if (!user) {
       user = await this.prisma.user.create({
         data: {
