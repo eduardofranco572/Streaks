@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { Riple } from 'react-loading-indicators';
 
 const LoginComponent: React.FC = () => {
   const router = useRouter();
@@ -33,7 +34,9 @@ const LoginComponent: React.FC = () => {
   return (
     <div>
       {processing ? (
-        <p>Processando login...</p>
+        <div className='flex items-center justify-center h-screen w-full'>
+            <Riple color="#FFCE04" size="medium" text="" textColor="" />
+        </div>
       ) : (
         <div className="flex items-center justify-center h-screen w-full">
           <div className="flex flex-col items-center border border-[#27272A] rounded-2xl p-4 max-w-[90%] h-auto">

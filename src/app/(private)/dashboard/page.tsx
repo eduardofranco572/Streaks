@@ -3,10 +3,12 @@ import EngagedUsers from "@/components/dashboard/engaged-users";
 import { CadastroBarChart } from "@/components/dashboard/cadastro-bar-chart";
 import DashboardCards from "@/components/dashboard/dashboard-cards";
 import { EngagementByYearChart } from "@/components/dashboard/engagement-by-year-chart";
+import { Header } from "@/components/header";
 
 export default async function Dashboard() {
   return (
     <main>
+      <Header/>
       <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">
         Dashboard Administrativo
       </h1>

@@ -10,13 +10,13 @@ class EngagementService {
 
   async getEngagementByYear() {
     const years = [2022, 2023, 2024, 2025, 2026];
-    
+  
     const engagementData = await Promise.all(
       years.map(async (year) => {
-        const startOfYear = new Date(year, 0, 1);
-        const endOfYear = new Date(year + 1, 0, 1);
-        
-        const count = await this.prisma.history.count({
+        const startOfYear = new Date(Date.UTC(year, 0, 1, 0, 0, 0));
+        const endOfYear = new Date(Date.UTC(year + 1, 0, 1, 0, 0, 0));
+  
+        const count = await this.prisma.user.count({
           where: {
             createdAt: {
               gte: startOfYear,
@@ -24,11 +24,14 @@ class EngagementService {
             },
           },
         });
+  
         return { year, count };
       })
     );
+  
     return engagementData;
-  }
+  }  
+    
 }
 
 const prisma = new PrismaClient();

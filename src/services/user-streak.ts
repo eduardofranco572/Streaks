@@ -91,9 +91,10 @@ class UserService {
           totalReading: 1,
           experience: 100,
           level: 1,
+          createdAt: new Date(),
         },
       });
-      await this.prisma.history.create({ data: { userId: user!.id } });
+      await this.prisma.history.create({ data: { userId: user!.id, createdAt: new Date() } });
       return;
     }
 
