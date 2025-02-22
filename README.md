@@ -15,16 +15,10 @@
  <div align="center">
     <br>
     <br>
-    <img src="">
+    <img src="/img-projeto/perfil.jpeg">
     <br>
     <br>
-    <img src="">
-    <br>
-    <br>
-    <img src="">
-    <br>
-    <br>
-    <img src="">
+     <img src="/img-projeto/perfil-mobile.jpeg">  
     <br>
     <br>
  </div>
@@ -45,16 +39,10 @@
  <div align="center">
     <br>
     <br>
-    <img src="">
+    <img src="/img-projeto/dashboard.png">
     <br>
     <br>
-    <img src="">
-    <br>
-    <br>
-    <img src="">
-    <br>
-    <br>
-    <img src="">
+    <img src="/img-projeto/dashboard-mobile.jpeg">
     <br>
     <br>
 </div>
