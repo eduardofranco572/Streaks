@@ -1,4 +1,4 @@
-# Projeto Gamificação em The News
+# Streaks
 
 ## Introdução
 <div align="justify">
